@@ -1,0 +1,3 @@
+# DebianMod
+基于redorescue修改，去掉了nginx。php，使用partclone命令备份还原
+修改了uefi启动文件制作，redorescue在debian系统制作uefi启动文件正常，ubuntu下无法加载grub.cfg.
