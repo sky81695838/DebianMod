@@ -234,10 +234,10 @@ UFAT="bootdir/efiboot.img"
 
 3) echo 'make OS file'
 #Copy system file
-	#mkdir image/live
-	#cp rootdir/boot/vmlinuz* image/vmlinuz
-	#cp rootdir/boot/initrd* image/initrd
-	#cp filesystem.squashfs image/live/
+	mkdir -p image/live
+	cp rootdir/boot/vmlinuz* image/vmlinuz
+	cp rootdir/boot/initrd* image/initrd
+	cp filesystem.squashfs image/live/
 # Create final ISO image
 	xorriso \
 		-as mkisofs \
