@@ -29,8 +29,11 @@ if [ "$EUID" -ne 0 ]
 	exit
 fi
 #Check overlay 
-if [ ! -d /overlay ]; then
+if [ ! -d overlay ]; then
 	tar xzf overlay.tar.gz
+	if [ $? -ne 0 ]; then
+	echo -e "\e[031m ERROR:Make Squashfs file need overlay folder.\e[0m"
+	fi		
 fi
 # Make base dir
 	rm -rf $ROOT
@@ -39,9 +42,7 @@ fi
 		echo -e " debootstrap-bullseye-amd64.tar.gz exists, extracting existing archive...$off"
 		sleep 2
 		tar zxf debootstrap-bullseye-amd64.tar.gz
-	elif [ -d rootdir ]; then
-		rm -rf rootdir
-else 
+	else 
 	debootstrap --variant=minbase --include=nano,bash-completion bullseye rootdir https://mirrors.tuna.tsinghua.edu.cn/debian/
 	tar czpf debootstrap-bullseye-amd64.tar.gz $ROOT
 	fi
