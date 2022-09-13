@@ -160,6 +160,10 @@ rm -rf /var/lib/dbus/machine-id
 rm -rf /tmp/*
 rm -f /etc/resolv.conf
 rm -rf /var/lib/apt/lists/????????*
+# System umounts
+umount /proc;
+umount /sys;
+umount/dev/pts
 EOL
 
 #Chinese language
