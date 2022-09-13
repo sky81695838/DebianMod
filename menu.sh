@@ -28,6 +28,10 @@ if [ "$EUID" -ne 0 ]
 	then echo -e "\e[033m ERROR: Must be run as root.\e[0m\n"
 	exit
 fi
+#Check overlay 
+if [ ! -d /overlay ]; then
+	tar xzf overlay.tar.gz
+fi
 # Make base dir
 	rm -rf $ROOT
 	rm -f filesystem.squashfs
