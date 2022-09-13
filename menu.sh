@@ -167,7 +167,7 @@ umount/dev/pts
 EOL
 
 #Chinese language
-cat >> rootdir/etc/etc/default/locale <<END
+cat >> rootdir/etc/default/locale <<END
 LANG="zh_CN.UTF-8"
 LANGUAGE="zh_CN:zh"
 END
